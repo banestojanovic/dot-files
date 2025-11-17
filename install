@@ -13,3 +13,6 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 # Phpactor
 rm -rf $HOME/.config/phpactor
 ln -s $DOTFILES/nvim/phpactor $HOME/.config/phpactor
+
+# Telescope fzf error fix
+#cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim && make && cd -
