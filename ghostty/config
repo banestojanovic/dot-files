@@ -1,0 +1,7 @@
+font-family = "TX-02"
+font-size = 15
+theme = light:Catppuccin Latte, dark:Rose Pine Moon
+window-padding-x = 7,12
+window-padding-y = 7,12
+adjust-cell-height = 14
+selection-invert-fg-bg = true

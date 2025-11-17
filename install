@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+# Ghostty
+rm -rf $HOME/.config/ghostty
+ln -s $DOTFILES/ghostty $HOME/.config/ghostty
+
+# Nvim
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+# Phpactor
+rm -rf $HOME/.config/phpactor
+ln -s $DOTFILES/nvim/phpactor $HOME/.config/phpactor
