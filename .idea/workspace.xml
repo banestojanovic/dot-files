@@ -4,80 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d9f7675-85f4-4580-8c5c-bce30871db4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nvim/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/.luacheckrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/.stylua.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/.styluaignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/after/ftplugin/php.vim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/after/ftplugin/php_only.vim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/after/queries/blade/highlights.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/after/queries/blade/injections.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/after/queries/html/injections.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/after/queries/php/injections.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/ftplugin/vue.vim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/lazy.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/misc.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/abolish.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/autopairs.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/barbecue.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/bufdelete.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/bufferline.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/cmp.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/codesnap.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/colorizer.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/commentary.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/conform.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/copilot.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/dashboard-nvim.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/eunuch.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/floaterm.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/fugitive.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/gitsigns.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/heritage.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/indent-blankline.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/lastplace.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/lspconfig.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/lualine.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/neo-tree.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/neoscroll.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/nvim-lint.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/oil.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/pasta.lua.disabled" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/peek.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/phpactor.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/projectionist.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/repeat.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/rooter.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/sleuth.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/surround.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/telescope.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/textobj-xmlattr.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/tokyonight.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/treesitter.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/treesj.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/unimpaired.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/vim-test.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/vim-tmux-navigator.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/visual-star-search.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/lua/user/plugins/which-key.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/queries/solidity/highlights.scm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/snippets/php.snippets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nvim/spell/en.utf-8.add" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dotfiles.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/init.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/init.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/lazy-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lazy-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/lua/user/options.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/user/options.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/nvim-pack-lock.json" beforeDir="false" />
-    </list>
+    <list default="true" id="3d9f7675-85f4-4580-8c5c-bce30871db4b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +67,7 @@
       <workItem from="1763286447064" duration="2957000" />
       <workItem from="1763303850655" duration="7636000" />
       <workItem from="1763325521579" duration="1822000" />
-      <workItem from="1763372077975" duration="3934000" />
+      <workItem from="1763372077975" duration="4560000" />
     </task>
     <servers />
   </component>

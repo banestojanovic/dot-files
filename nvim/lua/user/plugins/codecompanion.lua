@@ -1,0 +1,28 @@
+return {
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      strategies = {
+        chat = {
+          adapter = "copilot",
+          model = "grok-code-fast-1"
+        },
+        inline = {
+          adapter = "copilot",
+          model = "grok-code-fast-1"
+        },
+        cmd = {
+          adapter = "copilot",
+          model = "grok-code-fast-1"
+        }
+      },
+      opts = {
+        log_level = "DEBUG", -- or "TRACE"
+      },
+    },
+  },
+}

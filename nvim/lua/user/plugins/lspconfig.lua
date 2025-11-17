@@ -33,6 +33,10 @@ return {
         },
       },
       capabilities = capabilities,
+      root_markers = { "wp-config.php", "artisan.php"},
+      stubs = {
+        "wordpress",
+      },
       on_attach = function(client, bufnr)
         -- client.server_capabilities.documentFormattingProvider = false
         -- client.server_capabilities.documentRangeFormattingProvider = false
@@ -107,78 +111,21 @@ return {
       }
     })
 
-    -- require('lspconfig').eslint.setup({
-    --   capabilities = capabilities,
-    --   on_attach = function(client, bufnr)
-    --     vim.api.nvim_create_autocmd("BufWritePre", {
-    --       buffer = bufnr,
-    --       command = "EslintFixAll",
-    --     })
-    --   end,
-    --   handlers = {
-    --     ['textDocument/publishDiagnostics'] = function() end
-    --   }
-    -- })
-
-    -- null-ls (commented out; if using none-ls in 0.11+, adjust accordingly)
-    -- local null_ls = require('null-ls')
-    -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-    -- null_ls.setup({
-    --   temp_dir = '/tmp',
-    --   sources = {
-    --     -- null_ls.builtins.diagnostics.eslint_d.with({
-    --     --   condition = function(utils)
-    --     --     return utils.root_has_file({ '.eslintrc.js' })
-    --     --   end,
-    --     -- }),
-    --     -- null_ls.builtins.diagnostics.phpstan, -- TODO: Only if config file
-    --     null_ls.builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
-    --     -- null_ls.builtins.formatting.eslint_d.with({
-    --     --   condition = function(utils)
-    --     --     return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json' })
-    --     --   end,
-    --     -- }),
-    --     null_ls.builtins.formatting.pint.with({
-    --       condition = function(utils)
-    --         return utils.root_has_file({ 'vendor/bin/pint' })
-    --       end,
-    --     }),
-    --     -- null_ls.builtins.formatting.prettier.with({
-    --     --   condition = function(utils)
-    --     --     return utils.root_has_file({ '.prettierrc', '.prettierrc.json', '.prettierrc.yml', '.prettierrc.js', 'prettier.config.js' })
-    --     --   end,
-    --     -- }),
-    --   },
-    --   on_attach = function(client, bufnr)
-    --     if client.supports_method("textDocument/formatting") then
-    --       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    --       vim.api.nvim_create_autocmd("BufWritePre", {
-    --         group = augroup,
-    --         buffer = bufnr,
-    --         callback = function()
-    --           vim.lsp.buf.format({
-    --             filter = function(client)
-    --               return client.name == "null-ls"
-    --             end,
-    --             bufnr = bufnr,
-    --             timeout_ms = 5000
-    --           })
-    --         end,
-    --       })
-    --     end
-    --   end,
-    -- })
-    -- require('mason-null-ls').setup({ automatic_installation = true })
+    vim.lsp.config('phpactor', {
+      root_markers = { "wp-config.php", ".git", "composer.json", ".phpactor.json", ".phpactor.yml" }
+    })
 
     -- Setup mason-lspconfig: Auto-install and auto-enable servers
     require('mason-lspconfig').setup({
       ensure_installed = {
         'intelephense',
+        'phpactor',
         'vue_ls',
         'ts_ls',
         'tailwindcss',
         'jsonls',
         'lua_ls',
+        'oxlint',
         -- Add more servers as needed
       },
       automatic_enable = true,  -- Automatically enable all installed servers with vim.lsp.enable()
