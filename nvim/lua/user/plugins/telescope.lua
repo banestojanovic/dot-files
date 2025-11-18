@@ -10,6 +10,7 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' }
   },
   keys = {
+    { '<leader>o', function() require('telescope.builtin').oldfiles() end },
     { '<leader>f', function() require('telescope.builtin').find_files() end },
     { '<leader>F', function() require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' }) end },
     { '<leader>b', function() require('telescope.builtin').buffers() end },

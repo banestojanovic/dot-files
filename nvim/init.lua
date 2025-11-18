@@ -12,3 +12,4 @@ require('user.misc')
 require('user.lazy')
 
 -- vim: nospell
+vim.cmd("colorscheme catppuccin")
