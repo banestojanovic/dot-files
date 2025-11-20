@@ -24,5 +24,8 @@ return {
         log_level = "DEBUG", -- or "TRACE"
       },
     },
+    keys = {
+      { "<leader>cc", "<cmd>CodeCompanionChatToggle<cr>", desc = "Toggle CodeCompanion Chat" }
+    },
   },
 }

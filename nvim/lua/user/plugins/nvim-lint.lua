@@ -6,7 +6,7 @@ return {
       javascriptreact = { 'oxlint' },
       typescript = { 'oxlint' },
       typescriptreact = { 'oxlint' },
-      php = { 'phpcs' },
+      php = { 'php' },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {

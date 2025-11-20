@@ -20,17 +20,17 @@ return {
             { upward = true, path = ctx.dirname }
           )[1] ~= nil
         end,
-    },
-    pint = {
-      command = "pint",
-      args = { "$FILENAME" },
-      stdin = false,
-    },
-  },
-    format_on_save = {
-      -- These options will be passed to conform.format()
-      timeout_ms = 10000,
-      -- lsp_format = "fallback",
-    },
+      },
+      pint = {
+        command = "vendor/bin/pint",
+        args = { "$FILENAME" },
+        stdin = false,
+      },
+   },
+  format_on_save = {
+     -- These options will be passed to conform.format()
+     timeout_ms = 10000,
+     -- lsp_format = "fallback",
+   },
   },
 }

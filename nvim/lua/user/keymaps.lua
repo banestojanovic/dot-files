@@ -59,5 +59,5 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 -- vim.keymap.set('v', '<A-k>', ":move '<-2<CR>gv=gv")
 
 -- Copilot
-vim.keymap.set('n', '<leader>at', ':CodeCompanionChat Toggle<CR>', { desc = 'Toggle Copilot' })
-vim.keymap.set('n', '<leader>aa', ':CodeCompanionActions<CR>', { desc = 'Show Copilot Actions' })
+-- vim.keymap.set('n', '<leader>at', ':CodeCompanionChat Toggle<CR>', { desc = 'Toggle Copilot' })
+-- vim.keymap.set('n', '<leader>aa', ':CodeCompanionActions<CR>', { desc = 'Show Copilot Actions' })

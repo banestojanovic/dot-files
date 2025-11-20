@@ -71,7 +71,7 @@ return {
 
 
       hl.StatusLine = {
-        bg = util.darken(c.bg_dark, 0.98, '#000000'),
+        bg = util.darken(c.bg_dark, 0.99),
         fg = c.fg_dark,
       }
       hl.StatusLineComment = {
@@ -173,6 +173,6 @@ return {
   config = function (plugin, opts)
     require('tokyonight').setup(opts)
 
-    -- vim.cmd('colorscheme tokyonight')
+    vim.cmd('colorscheme tokyonight')
   end,
 }

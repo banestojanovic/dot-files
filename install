@@ -2,6 +2,9 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
+# Zsh
+ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+
 # Ghostty
 rm -rf $HOME/.config/ghostty
 ln -s $DOTFILES/ghostty $HOME/.config/ghostty
@@ -17,5 +20,11 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 rm -rf $HOME/.config/phpactor
 ln -s $DOTFILES/nvim/phpactor $HOME/.config/phpactor
 
+# Scripts
+mkdir -p $HOME/.local/bin
+
+ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
+ln -sf $DOTFILES/scripts/deliver $HOME/.local/bin/deliver
+
 # Telescope fzf error fix
-#cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim && make && cd -
+# cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim && make && cd -

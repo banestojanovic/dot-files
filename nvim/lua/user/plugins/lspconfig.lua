@@ -33,7 +33,7 @@ return {
         },
       },
       capabilities = capabilities,
-      root_markers = { "wp-config.php", "artisan.php"},
+      root_markers = { "wp-config.php", "artisan", "composer.json", ".git" },
       stubs = {
         "wordpress",
       },
@@ -111,9 +111,9 @@ return {
       }
     })
 
-    vim.lsp.config('phpactor', {
-      root_markers = { "wp-config.php", ".git", "composer.json", ".phpactor.json", ".phpactor.yml" }
-    })
+    -- vim.lsp.config('phpactor', {
+    --   root_markers = { "wp-config.php", "artisan", ".git", "composer.json", ".phpactor.json", ".phpactor.yml" },
+    -- })
 
     -- Setup mason-lspconfig: Auto-install and auto-enable servers
     require('mason-lspconfig').setup({

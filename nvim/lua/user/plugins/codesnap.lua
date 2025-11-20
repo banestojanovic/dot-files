@@ -5,7 +5,7 @@ return {
   build = "make",
   opts = {
     mac_window_bar = false,
-    code_font_family = "JetBrainsMono Nerd Font",
+    code_font_family = "Geist Mono",
     watermark = "",
   },
 }

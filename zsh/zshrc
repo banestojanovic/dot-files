@@ -1,0 +1,113 @@
+# ----- Eza config -----
+alias ls="eza --color=auto --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
+# starship
+eval "$(starship init zsh)"
+
+export NVM_DIR="/Users/bane/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/83/"
+
+# Herd injected PHP binary.
+export PATH="/Users/bane/Library/Application Support/Herd/bin/":$PATH
+
+# Zsh Vi Mode
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# Autosuggetsions
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# plugins.
+# plugins=(git zsh-autosuggestions)
+
+# Source scripts
+export PATH="$HOME/Herd/dotfiles/scripts:$PATH"
+
+# Bun environment
+export PATH="$HOME/.bun/bin:$PATH"
+
+# shorthands.
+alias pint="vendor/bin/pint"
+alias pest="vendor/bin/pest"
+alias vim="nvim"
+
+dust() {
+  local msg="${1:-wip}"
+  git add .
+  git commit -m "$msg"
+  git push
+}
+
+# Projects
+alias projects="cd ~/Herd"
+alias art="php artisan"
+alias dep="vendor/bin/dep"
+
+alias dotfiles="cd ~/Herd/dotfiles"
+alias bl="cd ~/Herd/bootsandladders"
+alias flp="cd ~/Herd/flp"
+alias onellama="cd ~/Herd/onellama"
+alias ddcars="cd ~/Herd/drivedowncars"
+alias sveusluge="cd ~/Herd/sveusluge"
+alias mojflp="cd ~/Herd/mojflp"
+alias smalltree="cd ~/Herd/smalltree"
+alias sarovic="cd ~/Herd/sarovic"
+alias megabaza="cd ~/Herd/megabaza"
+alias hnp="cd ~/Herd/hnp"
+alias boots="cd ~/Herd/boots"
+alias manastirski="cd ~/Herd/manastirski"
+alias fromshift="cd ~/Herd/fromshift"
+alias banex="cd ~/Herd/banex"
+
+# wp
+alias xl="cd ~/Herd/wp/xl"
+alias xl-theme="cd ~/Herd/wp/xl/wp-content/themes/xl"
+alias xl-core="cd ~/Herd/wp/xl/wp-content/plugins/xl-core"
+alias lisfinity="cd ~/Herd/wp/lisfinity/wp-content/themes/lisfinity"
+alias lisfinity-theme="cd ~/Herd/wp/lisfinity/wp-content/themes/lisfinity"
+alias lisfinity-core="cd ~/Herd/wp/lisfinity/wp-content/plugins/lisfinity-core"
+alias wpflp="cd ~/Herd/wp/wpflp/wp-content/themes/wpflp"
+alias wpflp-theme="cd ~/Herd/wp/wpflp/wp-content/themes/wp-flp"
+alias wpflp-core="cd ~/Herd/wp/wpflp/wp-content/plugins/wp-flp"
+alias efiskal="cd ~/Herd/wp/efiskal"
+alias efiskal-theme="cd ~/Herd/wp/efiskal/wp-content/themes/efiskal"
+alias efiskal-core="cd ~/Herd/wp/efiskal/wp-content/plugins/efiskal"
+alias engine="cd ~/Herd/wp/engine"
+alias engine-theme="cd ~/Herd/wp/engine/wp-content/themes/engine"
+alias pebas-core="cd ~/Herd/wp/engine/wp-content/plugins/pebas-core"
+alias ride-theme="cd ~/Herd/wp/ridexxl/wp-content/themes/ridexxl"
+alias ride-core="cd ~/Herd/wp/ridexxl/wp-content/plugins/pebas-core"
+alias unit="cd ~/Herd/wp/unit"
+
+unit-theme() {
+  local msg="${1:-engine}"
+  cd ~/Herd/wp/unit/wp-content/themes/"$msg"
+}
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/82/"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/85/"
+
+
+# Herd injected PHP 7.4 configuration.
+export HERD_PHP_74_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/74/"
+
+
+# Herd injected PHP 8.0 configuration.
+export HERD_PHP_80_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/80/"
+
+
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/81/"
