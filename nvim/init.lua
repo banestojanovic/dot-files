@@ -1,10 +1,5 @@
 --
---                            ⢸⣦⡈⠻⣿⣿⣿⣶⣄
---                            ⢸⣿⣿⣦⡈⠻⣿⣿⣿⣷⣄
---                      ⣀⣀⣀⣀⣀⣀⣼⣿⣿⣿⣿ ⠈⠻⣿⣿⣿⣷⣄
---                      ⠈⠻⣿⣿⣿⣿⣿⡿⠿⠛⠁   ⠈⠻⢿⣿⣿⣷⣄
---
--- Personal Neovim configuration of Jess Archer <jess@jessarcher.com>
+-- Personal Neovim configuration of Bane Stojanovic x.com/@banestojanovics
 
 require('user.options')
 require('user.keymaps')

@@ -1,4 +1,4 @@
-font-family = "TX-02"
+font-family = "JetBrainsMono"
 font-size = 15
 theme = light:Catppuccin Latte, dark:Tokyonight Moon
 window-padding-x = 7,12
