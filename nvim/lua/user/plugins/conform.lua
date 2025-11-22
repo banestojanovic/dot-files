@@ -9,7 +9,8 @@ return {
     },
     formatters = {
       phpcbf = {
-        command = "phpcbf",
+        -- temporary solution until WPCS supports phpcs v4
+        command = vim.fn.getcwd() .. "/wp-content/plugins/pebas-core/vendor/bin/phpcbf",
         args = { "--standard=WordPress", "-" },
         stdin = true,
         timeout_ms = 30000,
