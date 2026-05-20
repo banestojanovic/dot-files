@@ -119,7 +119,7 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = {
         'intelephense',
-        'phpactor',
+        -- 'phpactor',
         'vue_ls',
         'ts_ls',
         'tailwindcss',

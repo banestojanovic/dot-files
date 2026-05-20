@@ -16,7 +16,7 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/co
 export PATH="/Users/bane/Library/Application Support/Herd/bin/":$PATH
 
 # Zsh Vi Mode
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Autosuggetsions
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -36,14 +36,17 @@ alias pest="vendor/bin/pest"
 alias vim="nvim"
 
 dust() {
-  local msg="${1:-wip}"
+  local msg="$1"
+  if [ -z "$msg" ]; then
+    msg="wip $(date '+%Y-%m-%d %H:%M:%S')"
+  fi
   git add .
   git commit -m "$msg"
   git push
 }
 
 # Projects
-alias projects="cd ~/Herd"
+alias code="cd ~/Herd"
 alias art="php artisan"
 alias dep="vendor/bin/dep"
 
@@ -62,6 +65,8 @@ alias boots="cd ~/Herd/boots"
 alias manastirski="cd ~/Herd/manastirski"
 alias fromshift="cd ~/Herd/fromshift"
 alias banex="cd ~/Herd/banex"
+alias carcompare="cd ~/Herd/carcompare"
+alias ecom="cd ~/Herd/ecom"
 
 # wp
 alias xl="cd ~/Herd/wp/xl"
@@ -81,7 +86,15 @@ alias engine-theme="cd ~/Herd/wp/engine/wp-content/themes/engine"
 alias pebas-core="cd ~/Herd/wp/engine/wp-content/plugins/pebas-core"
 alias ride-theme="cd ~/Herd/wp/ridexxl/wp-content/themes/ridexxl"
 alias ride-core="cd ~/Herd/wp/ridexxl/wp-content/plugins/pebas-core"
+alias carvetto-theme="cd ~/Herd/wp/carvetto/wp-content/themes/carvetto"
+alias carvetto-core="cd ~/Herd/wp/carvetto/wp-content/plugins/pebas-core"
+alias vfox-theme="cd ~/Herd/wp/vroomfox/wp-content/themes/vroomfox"
+alias vfox-core="cd ~/Herd/wp/vroomfox/wp-content/plugins/pebas-core"
 alias unit="cd ~/Herd/wp/unit"
+
+#forga shorthands.
+alias forgadm="cd ~/Herd/wp/forgadm/wp-content/themes/forgadm"
+alias forgamss="cd ~/Herd/wp/forgamss/wp-content/themes/forgamss"
 
 unit-theme() {
   local msg="${1:-engine}"
@@ -121,3 +134,5 @@ function y() {
 	rm -f -- "$tmp"
 }
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk && export PATH=$PATH:$ANDROID_HOME/emulator && export PATH=$PATH:$ANDROID_HOME/platform-tools

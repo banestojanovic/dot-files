@@ -50,6 +50,9 @@ vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
+-- React specific keymaps
+vim.keymap.set('i', 'cc', 'className={``}<Left><Left>')
+
 -- Move text up and down
 -- vim.keymap.set('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
 -- vim.keymap.set('i', '<A-k>', '<Esc>:move .-2<CR>==gi')

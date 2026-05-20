@@ -11,8 +11,13 @@ return {
       phpcbf = {
         -- temporary solution until WPCS supports phpcs v4
         command = vim.fn.getcwd() .. "/wp-content/plugins/pebas-core/vendor/bin/phpcbf",
-        args = { "--standard=WordPress", "-" },
-        stdin = true,
+        args = {
+          -- "--standard=WordPress",
+          "--extensions=" .. vim.fn.getcwd() .. "/phpcs.ruleset.xml",
+          "--extensions=phpcs.ruleset.xml",
+          "-" 
+        },
+        args = { "--standard=./phpcs.xml", "$FILENAME" },
         timeout_ms = 30000,
         -- This is the key: only run phpcbf if the project looks like WordPress
         condition = function(ctx)
