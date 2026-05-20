@@ -46,11 +46,11 @@ dust() {
 }
 
 # Projects
-alias code="cd ~/Herd"
+alias code="cd ~/Code"
 alias art="php artisan"
 alias dep="vendor/bin/dep"
 
-alias dotfiles="cd ~/Herd/dotfiles"
+alias dotfiles="cd ~/Code/dotfiles"
 alias bl="cd ~/Herd/bootsandladders"
 alias flp="cd ~/Herd/flp"
 alias onellama="cd ~/Herd/onellama"
