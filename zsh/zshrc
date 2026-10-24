@@ -1,138 +1,51 @@
-# ----- Eza config -----
-alias ls="eza --color=auto --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+# ----- Homebrew & shell environment -----
+if [[ -d /opt/homebrew/bin ]]; then
+  export HOMEBREW_PREFIX=/opt/homebrew
+fi
 
-# starship
+export STARSHIP_CONFIG="$HOME/Code/dotfiles/starship.toml"
 eval "$(starship init zsh)"
 
-export NVM_DIR="/Users/bane/Library/Application Support/Herd/config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# ----- Node.js -----
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
-[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+# ----- Tools -----
+alias ls="eza --color=auto --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+source "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+export PATH="$HOME/Code/dotfiles/scripts:$HOME/.local/bin:$HOME/.bun/bin:$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$PATH:$HOME/Library/Android/sdk/emulator:$HOME/Library/Android/sdk/platform-tools"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/83/"
-
-# Herd injected PHP binary.
-export PATH="/Users/bane/Library/Application Support/Herd/bin/":$PATH
-
-# Zsh Vi Mode
-# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-# Autosuggetsions
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# plugins.
-# plugins=(git zsh-autosuggestions)
-
-# Source scripts
-export PATH="$HOME/Herd/dotfiles/scripts:$PATH"
-
-# Bun environment
-export PATH="$HOME/.bun/bin:$PATH"
-
-# shorthands.
+# ----- Shortcuts -----
 alias pint="vendor/bin/pint"
 alias pest="vendor/bin/pest"
-alias vim="nvim"
-
-dust() {
-  local msg="$1"
-  if [ -z "$msg" ]; then
-    msg="wip $(date '+%Y-%m-%d %H:%M:%S')"
-  fi
-  git add .
-  git commit -m "$msg"
-  git push
-}
-
-# Projects
+alias python="/opt/homebrew/bin/python3"
 alias code="cd ~/Code"
 alias art="php artisan"
 alias dep="vendor/bin/dep"
-
 alias dotfiles="cd ~/Code/dotfiles"
-alias bl="cd ~/Herd/bootsandladders"
-alias flp="cd ~/Herd/flp"
-alias onellama="cd ~/Herd/onellama"
-alias ddcars="cd ~/Herd/drivedowncars"
-alias sveusluge="cd ~/Herd/sveusluge"
-alias mojflp="cd ~/Herd/mojflp"
-alias smalltree="cd ~/Herd/smalltree"
-alias sarovic="cd ~/Herd/sarovic"
-alias megabaza="cd ~/Herd/megabaza"
-alias hnp="cd ~/Herd/hnp"
-alias boots="cd ~/Herd/boots"
-alias manastirski="cd ~/Herd/manastirski"
-alias fromshift="cd ~/Herd/fromshift"
-alias banex="cd ~/Herd/banex"
-alias carcompare="cd ~/Herd/carcompare"
-alias ecom="cd ~/Herd/ecom"
 
-# wp
-alias xl="cd ~/Herd/wp/xl"
-alias xl-theme="cd ~/Herd/wp/xl/wp-content/themes/xl"
-alias xl-core="cd ~/Herd/wp/xl/wp-content/plugins/xl-core"
-alias lisfinity="cd ~/Herd/wp/lisfinity/wp-content/themes/lisfinity"
-alias lisfinity-theme="cd ~/Herd/wp/lisfinity/wp-content/themes/lisfinity"
-alias lisfinity-core="cd ~/Herd/wp/lisfinity/wp-content/plugins/lisfinity-core"
-alias wpflp="cd ~/Herd/wp/wpflp/wp-content/themes/wpflp"
-alias wpflp-theme="cd ~/Herd/wp/wpflp/wp-content/themes/wp-flp"
-alias wpflp-core="cd ~/Herd/wp/wpflp/wp-content/plugins/wp-flp"
-alias efiskal="cd ~/Herd/wp/efiskal"
-alias efiskal-theme="cd ~/Herd/wp/efiskal/wp-content/themes/efiskal"
-alias efiskal-core="cd ~/Herd/wp/efiskal/wp-content/plugins/efiskal"
-alias engine="cd ~/Herd/wp/engine"
-alias engine-theme="cd ~/Herd/wp/engine/wp-content/themes/engine"
-alias pebas-core="cd ~/Herd/wp/engine/wp-content/plugins/pebas-core"
-alias ride-theme="cd ~/Herd/wp/ridexxl/wp-content/themes/ridexxl"
-alias ride-core="cd ~/Herd/wp/ridexxl/wp-content/plugins/pebas-core"
-alias carvetto-theme="cd ~/Herd/wp/carvetto/wp-content/themes/carvetto"
-alias carvetto-core="cd ~/Herd/wp/carvetto/wp-content/plugins/pebas-core"
-alias vfox-theme="cd ~/Herd/wp/vroomfox/wp-content/themes/vroomfox"
-alias vfox-core="cd ~/Herd/wp/vroomfox/wp-content/plugins/pebas-core"
-alias unit="cd ~/Herd/wp/unit"
-
-#forga shorthands.
-alias forgadm="cd ~/Herd/wp/forgadm/wp-content/themes/forgadm"
-alias forgamss="cd ~/Herd/wp/forgamss/wp-content/themes/forgamss"
-
-unit-theme() {
-  local msg="${1:-engine}"
-  cd ~/Herd/wp/unit/wp-content/themes/"$msg"
+# ----- Functions -----
+dust() {
+  local msg="${1:-wip $(date '+%Y-%m-%d %H:%M:%S')}"
+  git add . && git commit -m "$msg" && git push
 }
 
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/82/"
-
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected PHP 8.5 configuration.
-export HERD_PHP_85_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/85/"
-
-
-# Herd injected PHP 7.4 configuration.
-export HERD_PHP_74_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/74/"
-
-
-# Herd injected PHP 8.0 configuration.
-export HERD_PHP_80_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/80/"
-
-
-# Herd injected PHP 8.1 configuration.
-export HERD_PHP_81_INI_SCAN_DIR="/Users/bane/Library/Application Support/Herd/config/php/81/"
-
-# Yazi shell commands
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+# Pick a project and open it in the current Rex terminal session.
+t() {
+  local selected
+  selected="$(command t "$@")" || return
+  [[ -n "$selected" ]] && builtin cd -- "$selected"
 }
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/Android/sdk && export PATH=$PATH:$ANDROID_HOME/emulator && export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [[ -n "$cwd" && "$cwd" != "$PWD" ]] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
+export PATH="$HOME/.local/bin:$PATH"

@@ -1,30 +1,24 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+mkdir -p "$HOME/.config" "$HOME/.local/bin"
 
-# Zsh
-ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+# Preserve user-specific shell functions and load the shared shell config.
+touch "$HOME/.zshrc"
+if [[ ! -L "$HOME/.zshrc" || "$(readlink "$HOME/.zshrc")" != "$DOTFILES/zsh/zshrc" ]] && \
+    ! grep -Fq "source \"$DOTFILES/zsh/zshrc\"" "$HOME/.zshrc"; then
+    printf '\n# Load the shared dotfiles shell configuration.\nsource "%s/zsh/zshrc"\n' "$DOTFILES" >> "$HOME/.zshrc"
+fi
 
-# Ghostty
-rm -rf $HOME/.config/ghostty
-ln -s $DOTFILES/ghostty $HOME/.config/ghostty
-#
-# Tmux
-ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+# Keep the existing Ghostty setup and share its configuration.
+if [[ -L "$HOME/.config/ghostty" || ! -e "$HOME/.config/ghostty" ]]; then
+    ln -sfn "$DOTFILES/ghostty" "$HOME/.config/ghostty"
+fi
 
-# Nvim
-rm -rf $HOME/.config/nvim
-ln -s $DOTFILES/nvim $HOME/.config/nvim
+# Starship prompt
+if [[ -L "$HOME/.config/starship.toml" || ! -e "$HOME/.config/starship.toml" ]]; then
+    ln -sfn "$DOTFILES/starship.toml" "$HOME/.config/starship.toml"
+fi
 
-# Phpactor
-rm -rf $HOME/.config/phpactor
-ln -s $DOTFILES/nvim/phpactor $HOME/.config/phpactor
-
-# Scripts
-mkdir -p $HOME/.local/bin
-
-ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
-ln -sf $DOTFILES/scripts/deliver $HOME/.local/bin/deliver
-
-# Telescope fzf error fix
-# cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim && make && cd -
+# Project picker
+ln -sf "$DOTFILES/scripts/t" "$HOME/.local/bin/t"
